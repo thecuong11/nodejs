@@ -7,13 +7,13 @@ const app = express()
 
 
 // init middleweares
-app.use(morgan("dev"))
+app.use(morgan("dev")) //Show log, thông tin user khi send request
 // app.use(morgan("comined"))
 // app.use(morgan("common"))
 // app.use(morgan("short"))
 // app.use(morgan("tiny"))
-app.use(helmet())
-app.use(compression())
+app.use(helmet()) // Chặn hiển thị thông tin riêng của server
+app.use(compression()) // tốn ít băng thông hơn
 
 // console.log(`Process::`,process.env)
 
