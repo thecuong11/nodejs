@@ -14,6 +14,10 @@ app.use(morgan("dev")) //Show log, thông tin user khi send request
 // app.use(morgan("tiny"))
 app.use(helmet()) // Chặn hiển thị thông tin riêng của server
 app.use(compression()) // tốn ít băng thông hơn
+app.use(express.json()) //Convert sang json
+app.use(express.urlencoded({
+    extended: true
+}))
 
 // console.log(`Process::`,process.env)
 
@@ -24,14 +28,8 @@ require('./dbs/init.mongodb')
 // checkOverload()
 
 // init routes
-app.get('/', (req, res, next)=>{
-    const strCompress = 'Hello NodeJS'
+app.use('', require('./routes/index'))
 
-    return res.status(200).json({
-        message: 'Welcome to NosdeJS!',
-        metadate: strCompress.repeat(1000)
-    })
-})
 
 // handling error
 

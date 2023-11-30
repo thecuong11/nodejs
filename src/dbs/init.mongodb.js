@@ -2,9 +2,9 @@
 
 const mongoose = require('mongoose')
 const {db: { host, port, name}} = require('../configs/config.mongodb')
-const connectString = `mongodb://${host}:${port}/${name}`
+const connectString = `mongodb://root:admin@${host}:${port}/${name}?authSource=admin`
 const {countConnection} = require('../helpers/check.connect')
-console.log(`Connectionf:`,connectString)
+console.log(`Connection:`,connectString)
 
 class Database {
     constructor() {

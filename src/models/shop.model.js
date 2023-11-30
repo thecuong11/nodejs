@@ -31,7 +31,7 @@ const shopSchema = new Schema({
         default: false
     },
     roles:{
-        type:String,
+        type:Array,
         default: []
     }
 }, {
