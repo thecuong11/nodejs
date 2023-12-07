@@ -2,3 +2,10 @@
 
 POST http://localhost:3056/v1/api/shop/signup
 
+Content-Type: application/json
+
+{
+   "name": "ShopTips JS",
+   "email": "shoptip@gmail.com",
+   "password": "abc123"
+}
